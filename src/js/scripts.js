@@ -17,7 +17,7 @@ $(function() {
       $('.main-nav').css('box-shadow', '0px 0px 5px #747474');
       $('.main-nav').css('border-bottom', '0');
       $('a').css('color', '#43a0fa');
-      $('.standard-section').css('border-left', 'solid 10px #8CE196');
+      $('.standard-section').addClass('border-left');
       $('.standard-section').css('background-color', 'rgba(97, 139, 102, 0.09)');
       $('footer').css('border-left', 'solid 10px #8CE196');
       $('footer').css('background-color', 'rgba(97, 139, 102, 0.09)');
@@ -26,7 +26,7 @@ $(function() {
       $('.logo').grayscale();
       $('img').grayscale();
       $('a').css('color', '#000');
-      $('.standard-section').css('border-left', '0');
+      $('.standard-section').removeClass('border-left');
       $('.standard-section').css('background-color', '#fff');
       $('footer').css('border-left', '0');
       $('footer').css('background-color', '#fff');

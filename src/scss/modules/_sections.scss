@@ -92,3 +92,9 @@
     margin-top: 55px;
   }
 }
+
+.border-left {
+  @media screen and (min-width: 800px) {
+  border-left: solid 10px #8CE196;
+  }
+}
