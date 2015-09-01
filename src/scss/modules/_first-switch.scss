@@ -1,0 +1,26 @@
+.first-switch {
+  .fa {
+    display: inline-block;
+  }
+
+  .main-nav {
+    .logo {
+      display: inline-block;
+    }
+  }
+  
+  .standard-section {
+    article {
+      .logo-container {
+        display: inline-block;
+        vertical-align: middle;
+
+        @media screen and (max-width: 800px) {
+          display: block;
+          margin: 10px auto;
+          width: auto;
+        }
+      }
+    }
+  }
+}

@@ -79,3 +79,17 @@
     }
   }
 }
+
+.sticky-switch {
+  position: fixed;
+  z-index: 999;
+  right: 15px;
+  top: 10px;
+}
+
+.sticky-switch2 {
+  position: fixed;
+  z-index: 999;
+  left: 15px;
+  bottom: 15px;
+}
