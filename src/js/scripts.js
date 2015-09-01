@@ -12,8 +12,8 @@ $(function() {
 
   $('#fancySwitch').on('change', function(e) {
     if ($(e.target)[0].checked) {
-      $('.logo-container').show();
-      $('.logo').show();
+      $('.logo-container').show('fast');
+      $('.logo').show('fast');
       $('a').css('color', '#43a0fa');
       $('.standard-section').css('border-left', 'solid 10px #8CE196');
       $('.standard-section').css('background-color', 'rgba(97, 139, 102, 0.09)');
