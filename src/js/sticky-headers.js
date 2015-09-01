@@ -1,67 +1,56 @@
-var stickyHeaders = (function() {
+function stickyTitles(stickies) {
 
-  var $window = $(window),
-      $stickies;
+	var titles = {};
 
-  var load = function(stickies) {
+	titles.init = function() {
 
-    if (typeof stickies === "object" && stickies instanceof jQuery && stickies.length > 0) {
+		stickies.each(function() {
 
-      $stickies = stickies.each(function() {
+			var thisSticky = $(this);
+			 thisSticky.parent().height(thisSticky.outerHeight());
 
-        var $thisSticky = $(this).wrap('<div class="followWrap" />');
+		   $.data(thisSticky[0], 'pos',    thisSticky.parent().offset().top);
 
-        $thisSticky
-            .data('originalPosition', $thisSticky.offset().top)
-            .data('originalHeight', $thisSticky.outerHeight())
-              .parent()
-              .height($thisSticky.outerHeight());
-      });
+		});
 
-      $window.off("scroll.stickies").on("scroll.stickies", function() {
-		  _whenScrolling();
-      });
+		$(window).off("scroll.stickies").on("scroll.stickies", function() {
+
+			  titles.scroll();
+
+		});
+	}
+
+	titles.scroll = function() {
+
+		stickies.each(function(i){
+
+			var thisSticky = $(this),
+				nextSticky = stickies.eq(i+1),
+				prevSticky = stickies.eq(i-1),
+				pos = $.data(thisSticky[0], 'pos');
+
+			if (pos <= $(window).scrollTop()) {
+
+				  thisSticky.addClass("fixed");
+
+				  if (nextSticky.length > 0 && thisSticky.offset().top >= $.data(nextSticky[0], 'pos') - thisSticky.outerHeight()) {
+
+						thisSticky.addClass("absolute").css("top", $.data(nextSticky[0], 'pos') - thisSticky.outerHeight());
+
+				  }
+
+			} else {
+
+				  thisSticky.removeClass("fixed");
+
+				  if (prevSticky.length > 0 && $(window).scrollTop() <= $.data(thisSticky[0], 'pos')  - prevSticky.outerHeight()) {
+
+						prevSticky.removeClass("absolute").removeAttr("style");
+
+				  }
+			}
+		});
     }
-  };
 
-  var _whenScrolling = function() {
-
-    $stickies.each(function(i) {
-
-      var $thisSticky = $(this),
-          $stickyPosition = $thisSticky.data('originalPosition');
-
-      if ($stickyPosition <= $window.scrollTop()) {
-
-        var $nextSticky = $stickies.eq(i + 1),
-            $nextStickyPosition = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
-
-        $thisSticky.addClass("fixed");
-
-        if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPosition) {
-
-          $thisSticky.addClass("absolute").css("top", $nextStickyPosition);
-        }
-
-      } else {
-
-        var $prevSticky = $stickies.eq(i - 1);
-
-        $thisSticky.removeClass("fixed");
-
-        if ($prevSticky.length > 0 && $window.scrollTop() <= $thisSticky.data('originalPosition') - $thisSticky.data('originalHeight')) {
-
-          $prevSticky.removeClass("absolute").removeAttr("style");
-        }
-      }
-    });
-  };
-
-  return {
-    load: load
-  };
-})();
-
-$(function() {
-  stickyHeaders.load($(".fixed-header"));
-});
+	titles.init();
+}

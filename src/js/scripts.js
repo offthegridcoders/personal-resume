@@ -31,6 +31,7 @@ function hideSecondSwitch() {
 };
 
 function init() {
+  stickyTitles(jQuery(".fixed-header"));
   hideSecondSwitch();
 };
 
@@ -38,7 +39,7 @@ $(function() {
   var toggleSwitch1 = $('#fancySwitch');
   var toggleSwitch2 = $('#fancySwitch2');
   init();
-  
+
   toggleSwitch1.on('change', function(e) {
     if (toggleSwitch1[0].checked) { // IF CHECKED
       setFirstSwitchStyle();
@@ -48,6 +49,7 @@ $(function() {
       hideSecondSwitch();
       removeFirstSwitchStyle();
     }
+    stickyTitles(jQuery(".fixed-header"));
   });
 
   toggleSwitch2.on('change', function(e) {
