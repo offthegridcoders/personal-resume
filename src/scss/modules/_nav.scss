@@ -32,7 +32,6 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: inline-block;
     height: 40px;
     width: 40px;
     vertical-align: middle;
@@ -41,7 +40,6 @@
 
     @media screen and (max-width: 800px) {
       margin: 10px auto;
-      display: block;
     }
   }
 
@@ -50,18 +48,36 @@
   }
 }
 
-  @media screen and (max-width: 800px) {
-    .main-nav {
-      position: static;
+@media screen and (max-width: 800px) {
+  .main-nav {
+    position: static;
 
-      .switch-container {
-        z-index: 999;
-      }
+    .switch-container {
+      z-index: 999;
+    }
 
-      .sticky-switch {
-        position: fixed;
-        right: 15px;
-        bottom: 15px;
-      }
+    .sticky-switch {
+      position: fixed;
+      right: 15px;
+      bottom: 15px;
+    }
+
+    .sticky-switch2 {
+      position: fixed;
+      left: 15px;
+      bottom: 15px;
     }
   }
+}
+
+.logo-display-none {
+  display: none;
+}
+
+.logo-display {
+  display: inline-block;
+
+  @media screen and (max-width: 800px) {
+    display: block;
+  }
+}
