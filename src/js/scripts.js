@@ -10,7 +10,7 @@ $(function() {
   $('.logo').addClass('logo-display-none');
   $('.logo-container').hide();
   $('.switch-container2').addClass('hide');
-  $('header').addClass('hide');
+  $('.main-header').addClass('hide');
 
   $('#fancySwitch').on('change', function(e) {
     if ($(e.target)[0].checked) {
@@ -21,7 +21,7 @@ $(function() {
       $('.main-nav').css('border-bottom', '0');
       $('a').css('color', '#43a0fa');
       $('.standard-section').addClass('border-left');
-      $('.standard-section').css('background-color', 'rgba(97, 139, 102, 0.09)');
+      $('body').css('background-color', 'rgba(97, 139, 102, 0.09)');
       $('footer').addClass('border-left');
       $('footer').css('background-color', 'rgba(97, 139, 102, 0.09)');
       $('article').css('box-shadow', '2px 2px 5px rgba(0, 0, 0, 0.14)');
@@ -36,7 +36,7 @@ $(function() {
       $('.logo-container').hide();
       $('a').css('color', '#000');
       $('.standard-section').removeClass('border-left');
-      $('.standard-section').css('background-color', '#fff');
+      $('body').css('background-color', '#fff');
       $('footer').removeClass('border-left');
       $('footer').css('background-color', '#fff');
       $('article').css('box-shadow', 'none');
@@ -49,11 +49,21 @@ $(function() {
 
   $('#fancySwitch2').on('change', function(e) {
     if ($(e.target)[0].checked) {
-      $('header').removeClass('hide');
-      $('header').addClass('block');
+      $('body').css('background-color', '#fcfcfc');
+      $('.logo').removeClass('logo-display');
+      $('.logo').addClass('logo-display-none');
+      $('.main-header').removeClass('hide');
+      $('.main-header').addClass('block');
+      $('.first-section h1').hide();
+      $('.standard-section').removeClass('border-left');
     } else {
-      $('header').removeClass('block');
-      $('header').addClass('hide');
+      $('.logo').removeClass('logo-display-none');
+      $('body').css('background-color', 'rgba(97, 139, 102, 0.09)');
+      $('.logo').addClass('logo-display');
+      $('.main-header').removeClass('block');
+      $('.first-section h1').show();
+      $('.main-header').addClass('hide');
+      $('.standard-section').addClass('border-left');
     }
   });
 });

@@ -5,4 +5,33 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 100% 28%;
+  position: relative;
+  margin-bottom: 95px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.57);
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url('../assets/avatar.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    margin-left: -75px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.57);
+  }
+
+  h1 {
+    position: absolute;
+    bottom: -100px;
+    font-size: 20px;
+    left: 50%;
+    width: 200px;
+    text-align: center;
+    margin-left: -100px;
+    font-weight: 100;
+  }
 }
