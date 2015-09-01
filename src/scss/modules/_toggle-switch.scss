@@ -2,7 +2,11 @@
   display: inline-block;
   vertical-align: middle;
   margin-left: 20px;
-  
+
+  @media screen and (max-width: 800px) {
+    margin: 0;
+  }
+
   .cmn-toggle {
     position: absolute;
     margin-left: -9999px;
