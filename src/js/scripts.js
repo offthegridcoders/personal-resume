@@ -23,7 +23,6 @@ $(function() {
       $('.standard-section').addClass('border-left');
       $('body').css('background-color', 'rgba(97, 139, 102, 0.09)');
       $('footer').addClass('border-left');
-      $('footer').css('background-color', 'rgba(97, 139, 102, 0.09)');
       $('article').css('box-shadow', '2px 2px 5px rgba(0, 0, 0, 0.14)');
       $('.switch-container2').removeClass('hide');
       $('.switch-container2').addClass('inline-block');
@@ -38,7 +37,6 @@ $(function() {
       $('.standard-section').removeClass('border-left');
       $('body').css('background-color', '#fff');
       $('footer').removeClass('border-left');
-      $('footer').css('background-color', '#fff');
       $('article').css('box-shadow', 'none');
       $('.main-nav').css('box-shadow', 'none');
       $('.main-nav').css('border-bottom', '1px solid #BEB5B5');
