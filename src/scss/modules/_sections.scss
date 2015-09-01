@@ -1,0 +1,57 @@
+.standard-section {
+  padding: 30px;
+
+  > h1 {
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-bottom: solid 1px $lightest-gray;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+
+  p,
+  li {
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  ul {
+    margin-top: 15px;
+  }
+
+  article {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: solid 1px $lightest-gray;
+
+    header {
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    img {
+      max-width: 150px;
+      max-height: 70px;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 100;
+    }
+
+    h2 {
+      font-size: 17px;
+      text-transform: capitalize;
+      font-weight: 600;
+      margin-bottom: 7px;
+      display: inline-block;
+    }
+
+    .logo-container {
+      display: inline-block;
+      margin-right: 30px;
+      width: 160px;
+    }
+  }
+}

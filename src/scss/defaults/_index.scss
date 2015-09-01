@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  font-family: $primary-font;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+body {
+  padding-top: 45px;
+}
+
+a {
+  color: #000;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.bottom {
+  vertical-align: bottom;
+}
+
+.grayscale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}

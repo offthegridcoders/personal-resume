@@ -1,0 +1,23 @@
+footer {
+  width: 100%;
+  padding: 50px;
+  font-weight: 100;
+  font-size: 12px;
+  color: $gray;
+  text-align: center;
+
+  p {
+    margin-bottom: 5px;
+  }
+
+  .social-links {
+    li {
+      display: inline-block;
+      margin: 10px;
+    }
+
+    a {
+      font-size: 34px;
+    }
+  }
+}
