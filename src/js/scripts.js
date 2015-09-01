@@ -8,10 +8,12 @@ $.fn.colorize = function() {
 
 $(function() {
   $('.logo').grayscale();
+  $('img').grayscale();
 
   $('#fancySwitch').on('change', function(e) {
     if ($(e.target)[0].checked) {
       $('.logo').colorize();
+      $('img').colorize();
       $('.main-nav').css('box-shadow', '0px 0px 5px #747474');
       $('.main-nav').css('border-bottom', '0');
       $('a').css('color', '#43a0fa');
@@ -22,6 +24,7 @@ $(function() {
       $('article').css('box-shadow', '2px 2px 5px rgba(0, 0, 0, 0.14)');
     } else {
       $('.logo').grayscale();
+      $('img').grayscale();
       $('a').css('color', '#000');
       $('.standard-section').css('border-left', '0');
       $('.standard-section').css('background-color', '#fff');
