@@ -37,7 +37,7 @@ $(function() {
   // refactor these change functions and make animate speed a function:
   //   if already ad top of page, do 0sec, else do conditionally depending
   //   on how far away from top they are
-  
+
   toggleSwitch1.on('change', function(e) {
     if (toggleSwitch1[0].checked) { // IF CHECKED
       $('html, body').animate({ scrollTop: 0 }, 'medium', function () {
