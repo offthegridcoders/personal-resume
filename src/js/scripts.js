@@ -1,97 +1,82 @@
-$.fn.grayscale = function() {
-  this.addClass('grayscale');
+function setBodyStyle(className) {
+  $('body').addClass(className);
 };
 
-$.fn.colorize = function() {
-  this.removeClass('grayscale');
+function removeBodyStyle(className) {
+  $('body').removeClass(className);
 };
 
-function setFirstSwitchStyle() {
-  $('body').addClass('first-switch');
+function hideSwitch(togSwitch) {
+  for (var i=0; i < togSwitch.length; i++) {
+    $(togSwitch[i]).removeClass('inline-block');
+    $(togSwitch[i]).addClass('hide');
+  }
 };
 
-function removeFirstSwitchStyle() {
-  $('body').removeClass('first-switch');
-};
-
-function setSecondSwitchStyle() {
-  $('body').addClass('second-switch');
-};
-
-function removeSecondSwitchStyle() {
-  $('body').removeClass('second-switch');
-};
-
-function showSecondSwitch() {
-  $('.switch-container2').removeClass('hide');
-  $('.switch-container2').addClass('inline-block');
-};
-
-function hideSecondSwitch() {
-  $('.switch-container2').removeClass('inline-block');
-  $('.switch-container2').addClass('hide');
-};
-
-function setThirdSwitchStyle() {
-  $('body').addClass('third-switch');
-};
-
-function removeThirdSwitchStyle() {
-  $('body').removeClass('third-switch');
-};
-
-function showThirdSwitch() {
-  $('.switch-container3').removeClass('hide');
-  $('.switch-container3').addClass('inline-block');
-};
-
-function hideThirdSwitch() {
-  $('.switch-container3').removeClass('inline-block');
-  $('.switch-container3').addClass('hide');
+function showSwitch(togSwitch) {
+  for (var i=0; i < togSwitch.length; i++) {
+    $(togSwitch[i]).removeClass('hide');
+    $(togSwitch[i]).addClass('inline-block');
+  }
 };
 
 function init() {
   stickyTitles(jQuery(".fixed-header"));
-  hideSecondSwitch();
-  hideThirdSwitch();
+  hideSwitch(['.sticky-switch2', '.sticky-switch3']);
+  new WOW().init();
 };
 
 $(function() {
   var toggleSwitch1 = $('#fancySwitch');
   var toggleSwitch2 = $('#fancySwitch2');
   var toggleSwitch3 = $('#fancySwitch3');
+
   init();
 
+  // TODO:
+  // refactor these change functions and make animate speed a function:
+  //   if already ad top of page, do 0sec, else do conditionally depending
+  //   on how far away from top they are
+  
   toggleSwitch1.on('change', function(e) {
     if (toggleSwitch1[0].checked) { // IF CHECKED
-      setFirstSwitchStyle();
-      showSecondSwitch();
+      $('html, body').animate({ scrollTop: 0 }, 'medium', function () {
+        setBodyStyle('first-switch');
+        showSwitch(['.sticky-switch2']);
+        stickyTitles(jQuery(".fixed-header"));
+      });
     } else { // IF UN-CHECKED
       if (toggleSwitch2[0].checked) toggleSwitch2.trigger('click');
-      hideSecondSwitch();
-      removeFirstSwitchStyle();
+      hideSwitch(['.sticky-switch2']);
+      removeBodyStyle('first-switch');
+      stickyTitles(jQuery(".fixed-header"));
     }
-    stickyTitles(jQuery(".fixed-header"));
   });
 
   toggleSwitch2.on('change', function(e) {
     if (toggleSwitch2[0].checked) { // IF CHECKED
-      setSecondSwitchStyle();
-      showThirdSwitch();
+      $('html, body').animate({ scrollTop: 0 }, 'medium', function () {
+        setBodyStyle('second-switch');
+        showSwitch(['.sticky-switch3']);
+        stickyTitles(jQuery(".fixed-header"));
+      });
     } else {
       if (toggleSwitch3[0].checked) toggleSwitch3.trigger('click');
-      removeSecondSwitchStyle(); // IF UN-CHECKED
-      hideThirdSwitch();
+      removeBodyStyle('second-switch');
+      hideSwitch(['.sticky-switch3']);
+      stickyTitles(jQuery(".fixed-header"));
     }
-    stickyTitles(jQuery(".fixed-header"));
   });
 
   toggleSwitch3.on('change', function(e) {
     if (toggleSwitch3[0].checked) { // IF CHECKED
-      setThirdSwitchStyle();
+      $('html, body').animate({ scrollTop: 0 }, 'medium', function () {
+        setBodyStyle('third-switch');
+        stickyTitles(jQuery(".fixed-header"));
+      });
     } else {
-      removeThirdSwitchStyle(); // IF UN-CHECKED
+      removeBodyStyle('third-switch');
+      stickyTitles(jQuery(".fixed-header"));
     }
-    stickyTitles(jQuery(".fixed-header"));
   });
 });
