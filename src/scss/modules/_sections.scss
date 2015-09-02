@@ -13,7 +13,10 @@
     padding-bottom: 8px;
     margin-bottom: 20px;
     padding-top: 8px;
-    background-color: #fff;
+
+    i {
+      margin-right: 15px;
+    }
 
     @media screen and (max-width: 800px) {
       text-align: center;
@@ -38,9 +41,7 @@
   }
 
   li {
-    @media screen and (max-width: 800px) {
-      margin-bottom: 10px;
-    }
+    margin-bottom: 10px;
 
     .fa-check {
       margin-right: 5px;
@@ -73,6 +74,7 @@
     padding: 25px 15px;
     border-bottom: solid 1px $lightest-gray;
     position: relative;
+    overflow: auto;
 
     @media screen and (max-width: 800px) {
       text-align: center;
@@ -85,6 +87,7 @@
     img {
       max-width: 150px;
       max-height: 70px;
+      margin-bottom: 20px;
     }
 
     h1 {
@@ -101,8 +104,6 @@
 
     .logo-container {
       display: none;
-      margin-right: 30px;
-      width: 160px;
     }
   }
 
@@ -111,7 +112,7 @@
     z-index: 888;
 
     &.fixed {
-      background-color: #fafafa !important;
+      background-color: #fafafa;
       position: fixed;
       padding-left: 30px;
       top: 0;

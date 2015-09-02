@@ -15,9 +15,11 @@ function removeFirstSwitchStyle() {
 };
 
 function setSecondSwitchStyle() {
+  $('body').addClass('second-switch');
 };
 
 function removeSecondSwitchStyle() {
+  $('body').removeClass('second-switch');
 };
 
 function showSecondSwitch() {

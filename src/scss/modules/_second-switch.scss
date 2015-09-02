@@ -1,0 +1,51 @@
+.second-switch {
+  a {
+    color: $link-blue;
+  }
+  
+  .fa {
+    display: inline-block;
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
+
+  .main-nav {
+    .logo {
+      display: inline-block;
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+    }
+  }
+
+  .standard-section {
+    .followWrap > h1 i {
+      color: #61C96D;
+    }
+
+    article {
+      .logo-container {
+        display: block;
+
+        img {
+          -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+        }
+        @media screen and (max-width: 800px) {
+          float: none;
+          display: block;
+          margin: 10px auto;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .fixed-header {
+    &.fixed {
+      i {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+      }
+    }
+  }
+}
