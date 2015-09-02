@@ -79,6 +79,7 @@ $(function() {
       setSecondSwitchStyle();
       showThirdSwitch();
     } else {
+      if (toggleSwitch3[0].checked) toggleSwitch3.trigger('click');
       removeSecondSwitchStyle(); // IF UN-CHECKED
       hideThirdSwitch();
     }
