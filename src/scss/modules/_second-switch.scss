@@ -2,7 +2,7 @@
   a {
     color: $link-blue;
   }
-  
+
   .fa {
     display: inline-block;
     -webkit-filter: grayscale(0);
@@ -14,12 +14,17 @@
       display: inline-block;
       -webkit-filter: grayscale(0);
       filter: grayscale(0);
+
+      @media screen and (max-width: 800px) {
+        display: block;
+        margin: 10px auto;
+      }
     }
   }
 
   .standard-section {
     .followWrap > h1 i {
-      color: #61C96D;
+      color: $link-blue;
     }
 
     article {

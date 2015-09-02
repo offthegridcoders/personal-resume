@@ -105,6 +105,18 @@
     .logo-container {
       display: none;
     }
+
+    .reference {
+      margin-top: 10px;
+    }
+
+    .reference-link {
+      margin: 0 3px;
+
+      i {
+        color: #8CE196;
+      }
+    }
   }
 
   .fixed-header {
@@ -119,6 +131,10 @@
       width: 100%;
       z-index: 888;
       left: 0;
+
+      @media screen and (max-width: 800px) {
+        padding-left: 0;
+      }
 
       &.absolute {
         position: absolute;

@@ -6,10 +6,10 @@
   background-repeat: no-repeat;
   background-position: 100% 28%;
   position: relative;
-  margin-bottom: 95px;
+  margin-bottom: 130px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.57);
   display: none;
-  
+
   .avatar {
     width: 150px;
     height: 150px;
@@ -35,4 +35,15 @@
     margin-left: -100px;
     font-weight: 100;
   }
+
+  h2 {
+    position: absolute;
+    bottom: -129px;
+    font-size: 15px;
+    left: 50%;
+    width: 300px;
+    text-align: center;
+    margin-left: -150px;
+    font-weight: 100;
+    }
 }

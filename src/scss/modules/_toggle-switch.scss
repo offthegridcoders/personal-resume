@@ -1,5 +1,6 @@
 .switch,
-.switch2 {
+.switch2,
+.switch3 {
   display: inline-block;
   vertical-align: middle;
   margin-left: 20px;
@@ -71,11 +72,22 @@
 
 .switch2 {
   input.cmn-toggle-round-flat:checked + label {
-    background-color: #8CB7E1;
+    background-color: $link-blue;
 
     &:after {
       margin-left: 28px;
-      background-color: #8CB7E1;
+      background-color: $link-blue;
+    }
+  }
+}
+
+.switch3 {
+  input.cmn-toggle-round-flat:checked + label {
+    background-color: #E76FB8;
+
+    &:after {
+      margin-left: 28px;
+      background-color: #E76FB8;
     }
   }
 }
@@ -88,6 +100,13 @@
 }
 
 .sticky-switch2 {
+  position: fixed;
+  z-index: 999;
+  right: 15px;
+  bottom: 15px;
+}
+
+.sticky-switch3 {
   position: fixed;
   z-index: 999;
   left: 15px;

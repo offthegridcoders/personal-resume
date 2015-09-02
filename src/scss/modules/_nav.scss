@@ -21,6 +21,10 @@
     font-size: 12px;
     vertical-align: middle;
     padding-left: 15px;
+
+    @media screen and (max-width: 800px) {
+      display: block;
+    }
   }
 
   .logo {

@@ -32,14 +32,34 @@ function hideSecondSwitch() {
   $('.switch-container2').addClass('hide');
 };
 
+function setThirdSwitchStyle() {
+  $('body').addClass('third-switch');
+};
+
+function removeThirdSwitchStyle() {
+  $('body').removeClass('third-switch');
+};
+
+function showThirdSwitch() {
+  $('.switch-container3').removeClass('hide');
+  $('.switch-container3').addClass('inline-block');
+};
+
+function hideThirdSwitch() {
+  $('.switch-container3').removeClass('inline-block');
+  $('.switch-container3').addClass('hide');
+};
+
 function init() {
   stickyTitles(jQuery(".fixed-header"));
   hideSecondSwitch();
+  hideThirdSwitch();
 };
 
 $(function() {
   var toggleSwitch1 = $('#fancySwitch');
   var toggleSwitch2 = $('#fancySwitch2');
+  var toggleSwitch3 = $('#fancySwitch3');
   init();
 
   toggleSwitch1.on('change', function(e) {
@@ -57,8 +77,20 @@ $(function() {
   toggleSwitch2.on('change', function(e) {
     if (toggleSwitch2[0].checked) { // IF CHECKED
       setSecondSwitchStyle();
+      showThirdSwitch();
     } else {
       removeSecondSwitchStyle(); // IF UN-CHECKED
+      hideThirdSwitch();
     }
+    stickyTitles(jQuery(".fixed-header"));
+  });
+
+  toggleSwitch3.on('change', function(e) {
+    if (toggleSwitch3[0].checked) { // IF CHECKED
+      setThirdSwitchStyle();
+    } else {
+      removeThirdSwitchStyle(); // IF UN-CHECKED
+    }
+    stickyTitles(jQuery(".fixed-header"));
   });
 });
